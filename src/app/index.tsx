@@ -6,7 +6,7 @@ export default function App() {
     <View>
       <Text>Nova tela.</Text>
       <TouchableOpacity onPress={() => router.push("login")}>
-        <Text>Login</Text>
+        <Text className="font-bold text-xl text-success ">Login</Text>
       </TouchableOpacity>
     </View>
   );
