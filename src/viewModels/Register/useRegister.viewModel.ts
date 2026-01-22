@@ -15,19 +15,18 @@ export const useRegisterViewModel = () => {
   } = useForm<RegisterFormData>({
     resolver: yupResolver(registerScheme),
     defaultValues: {
-      name: "jonatan",
-      email: "teste@email.com",
-      password: "123123",
-      confirmPassword: "123123",
-      phone: "12345678912",
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      phone: "",
     },
   });
 
   const onSubmit = handleSubmit(async (userData) => {
     const { confirmPassword, ...registerData } = userData;
-    const mutationResponse = await userRegisterMutation.mutateAsync(
-      registerData
-    );
+    const mutationResponse =
+      await userRegisterMutation.mutateAsync(registerData);
     setSession({
       refreshToken: mutationResponse.refreshToken,
       token: mutationResponse.token,
