@@ -19,10 +19,9 @@ export const RegisterView: FC<ReturnType<typeof useRegisterViewModel>> = ({
         <ScrollView
           className="flex-1"
           contentContainerStyle={{
-            alignItems: "center",
-            justifyContent: "center",
+            paddingBottom: 40,
             paddingHorizontal: 40,
-            flexGrow: 1,
+            flex: 1,
           }}
         >
           <AuthFormHeader
@@ -31,35 +30,43 @@ export const RegisterView: FC<ReturnType<typeof useRegisterViewModel>> = ({
           />
           <AppInputController
             control={control}
-            label="NOME"
-            leftIcon="person-outline"
             name="name"
+            label="NOME"
+            placeholder="Nome completo"
+            leftIcon="person-outline"
           />
           <AppInputController
             control={control}
-            label="E-MAIL"
-            leftIcon="mail-outline"
-            name="email"
-          />
-          <AppInputController
-            control={control}
-            label="TELEFONE"
-            leftIcon="call-outline"
             name="phone"
+            label="TELEFONE"
+            placeholder="(00) 00000-0000"
+            leftIcon="call-outline"
+          />
+
+          <Text className="text-base mt-6 font-bold text-gray-500">Acesso</Text>
+
+          <AppInputController
+            control={control}
+            name="email"
+            label="E-MAIL"
+            placeholder="mail@exemple.com.br"
+            leftIcon="mail-outline"
           />
           <AppInputController
             control={control}
-            label="SENHA"
-            leftIcon="lock-closed-outline"
             name="password"
+            label="SENHA"
+            placeholder="Sua senha"
+            leftIcon="lock-closed-outline"
             secureTextEntry
           />
 
           <AppInputController
             control={control}
-            label="CONFIRMAR SENHA"
-            leftIcon="lock-closed-outline"
             name="confirmPassword"
+            label="CONFIRMAR SENHA"
+            placeholder="Confirme a senha"
+            leftIcon="lock-closed-outline"
             secureTextEntry
           />
           <TouchableOpacity onPress={onSubmit}>
