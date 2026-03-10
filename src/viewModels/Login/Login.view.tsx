@@ -10,7 +10,7 @@ import { AppInputController } from "../../shared/components/AppInputController";
 
 export const LoginView: FC<ReturnType<typeof useLoginViewModel>> = ({
   control,
-  handleSubmit,
+  onSubmit,
 }) => {
   return (
     <SafeAreaView className="flex-1">
@@ -35,6 +35,10 @@ export const LoginView: FC<ReturnType<typeof useLoginViewModel>> = ({
             leftIcon="lock-closed-outline"
             secureTextEntry
           />
+
+          <TouchableOpacity onPress={onSubmit}>
+            <Text>Login</Text>
+          </TouchableOpacity>
 
           <TouchableOpacity onPress={() => router.push("/register")}>
             <Text>Registro</Text>
